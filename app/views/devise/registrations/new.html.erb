@@ -1,20 +1,20 @@
 <h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= bootstrap_form_for(resource, as: resource_name,
+                    url: registration_path(resource_name),
+                   :layout => :horizontal,
+                   :label_col => "col-md-3",
+                   :control_col => "col-md-4") do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+  
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", label_class:"fas fa-user fa-lg me-3 fa-fw" %>
+  
   
   <div class="field">
-    <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -22,7 +22,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
