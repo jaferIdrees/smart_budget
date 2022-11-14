@@ -9,6 +9,9 @@ gem 'rails', '~> 7.0.4'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+# Setup devise gem for authentication
+gem 'devise'
+
 # Add rubocop linter
 gem 'rubocop', '>= 1.0', '< 2.0'
 
