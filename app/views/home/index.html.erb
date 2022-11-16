@@ -1,10 +1,9 @@
-<!-- inside app/views/home/index.html.erb -->
-<h1>Welcome, this is the home page</h1>  
-  
-<button type="button" 
-        class="btn btn-lg btn-danger" 
-        data-bs-toggle="popover" 
-        title="Popover title" 
-        data-bs-content="Amazing content, right ?">
-        Click to toggle popover
-</button>  
+<div class="container-fluid d-flex flex-column justify-content-end align-items-center home-container border">
+  <div class="container d-flex h-100 justify-content-center align-items-center">
+    <p class='display-1 main-title'>Smart Budget</p>
+  </div>
+  <div class="container d-flex flex-column justify-content-end align-items-center pb-5">
+    <%= link_to 'LOG IN', new_user_session_path, method: :get, data: { turbo: false }, class: 'btn btn-primary btn-lg btn-block'%>
+    <%= link_to 'SIGN UP', new_user_registration_path, method: :get, data: { turbo: false }, class: 'btn btn-light btn-lg btn-block'%>
+  </div>
+</div>

@@ -9,9 +9,7 @@
 }
 
 .btn {
-  background-color:transparent;
-  border: 0;
-  vertical-align: middle;
+  width: 100% !important;
 }
 
 .bg-info-custom {
@@ -20,4 +18,12 @@
 
 .link {
   text-decoration: none;
+}
+
+.home-container {
+  height: 100vh;
+}
+
+.main-title {
+  font-family: 'Pacifico', cursive;
 }
