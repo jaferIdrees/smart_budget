@@ -1,0 +1,14 @@
+<%= render 'shared/navbar'%>
+<% @groups.each do |group| %>
+  <div class="container-fluid w-100 border d-flex" style="width: 18rem;">
+    <% if group.icon.size.zero? %>
+      <%= image_tag "img_placeholder.png",  style: 'height:5em;' %>
+    <% else %>
+      <%= image_tag group.icon,  style: 'height:5em;' %>
+    <% end %>
+    <%= link_to group.name%>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+<% end %>
+<%= link_to 'New group', new_group_path%>
