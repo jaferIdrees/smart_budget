@@ -7,15 +7,16 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "my_custom", media: 'all', 'data-turbolinks-track' => true %>
   </head>
   <body>
+    <%= render 'shared/navbar' %>
     <%if notice %>
       <p class="alert alert-success mt-4" role="alert"><%= notice %></p>
     <%end%>
     <%if alert %>
       <p class="alert alert-danger mt-4" role="alert"><%=alert %></p>
     <%end%>
-    
     <%= yield %>
   </body>
 </html>
