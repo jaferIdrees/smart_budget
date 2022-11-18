@@ -1,0 +1,13 @@
+<%= render 'shared/navbar'%>
+<% @groups.each do |group| %>
+  <div class="container-fluid w-100 border d-flex align-items-center" style="width: 18rem;">
+    <% if group.icon.size.zero? %>
+      <%= image_tag "img_placeholder.png",  style: 'height:5em;' %>
+    <% else %>
+      <%= image_tag group.icon,  style: 'height:5em;' %>
+    <% end %>
+    <%= link_to group.name, group_path(group.id),class: "display-1 text-decoration-none text-center flex-grow-1"%>
+    <p class="display-6">100 $</p>
+  </div>
+<% end %>
+<%= link_to 'New group', new_group_path, class: 'btn btn-primary btn-lg btn-block fixed-bottom'%>

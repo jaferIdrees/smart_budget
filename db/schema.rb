@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_15_054018) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_204709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_054018) do
     t.bigint "group_id", null: false
     t.bigint "purchase_id", null: false
     t.bigint "groups_id", null: false
-    t.bigint "purchases_id", null: false
+    t.bigint "purchases_id"
     t.index ["groups_id"], name: "index_groups_purchases_on_groups_id"
     t.index ["purchases_id"], name: "index_groups_purchases_on_purchases_id"
   end
@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_054018) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.text "photo"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
