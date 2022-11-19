@@ -1,4 +1,4 @@
-<%= render 'shared/navbar'%>
+<%= render 'shared/navbar', title: 'GROUPS', back: false%>
 <% @groups.each do |group| %>
   <div class="container-fluid w-100 border d-flex align-items-center" style="width: 18rem;">
     <% if group.icon.size.zero? %>
@@ -6,8 +6,8 @@
     <% else %>
       <%= image_tag group.icon,  style: 'height:5em;' %>
     <% end %>
-    <%= link_to group.name, group_path(group.id),class: "display-1 text-decoration-none text-center flex-grow-1"%>
-    <p class="display-6">100 $</p>
+    <%= link_to group.name, group_path(group.id),class: "display-1 text-capitalize text-decoration-none text-center flex-grow-1"%>
+    <p class="display-6"><%= group.total_amount%></p>
   </div>
 <% end %>
 <%= link_to 'New group', new_group_path, class: 'btn btn-primary btn-lg btn-block fixed-bottom'%>

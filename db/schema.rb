@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_16_204709) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_151252) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,20 +18,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_204709) do
     t.string "name"
     t.text "icon"
     t.bigint "author_id", null: false
-    t.bigint "purchase_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "total_amount", default: "0.0"
     t.index ["author_id"], name: "index_groups_on_author_id"
-    t.index ["purchase_id"], name: "index_groups_on_purchase_id"
   end
 
   create_table "groups_purchases", id: false, force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "purchase_id", null: false
-    t.bigint "groups_id", null: false
-    t.bigint "purchases_id"
-    t.index ["groups_id"], name: "index_groups_purchases_on_groups_id"
-    t.index ["purchases_id"], name: "index_groups_purchases_on_purchases_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -40,9 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_204709) do
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "group_id", null: false
     t.index ["author_id"], name: "index_purchases_on_author_id"
-    t.index ["group_id"], name: "index_purchases_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,10 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_204709) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "groups", "purchases"
   add_foreign_key "groups", "users", column: "author_id"
-  add_foreign_key "groups_purchases", "groups", column: "groups_id"
-  add_foreign_key "groups_purchases", "purchases", column: "purchases_id"
-  add_foreign_key "purchases", "groups"
   add_foreign_key "purchases", "users", column: "author_id"
 end
