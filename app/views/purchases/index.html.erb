@@ -1,9 +1,13 @@
-<%= render 'shared/navbar', title: 'PURCHASE'%>
+<%= render 'shared/navbar', title: 'PURCHASE', back: true%>
 <%unless @purchases.nil? %>
+<div class="container-fluid w-100 border d-flex justify-content-around align-items-center" style="width: 18rem;">
+ <p class="badge bg-success">Group: <%= @group.name%></p>
+ <p class="badge bg-success">Total purchases: <%= @total_amount%></p>
+</div>
 
 <% @purchases.each do |purchase| %>
   <div class="container-fluid w-100 border d-flex align-items-center" style="width: 18rem;">
-    <p class= "display-1 text-decoration-none text-center flex-grow-1"><%= purchase.name%> </p>
+    <p class= "display-1 text-decoration-none text-capitalize text-center flex-grow-1"><%= purchase.name%> </p>
     <p class="display-6"><%= purchase.amount%></p>
   </div>
 <% end %>

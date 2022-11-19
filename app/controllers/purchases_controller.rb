@@ -1,7 +1,9 @@
 class PurchasesController < ApplicationController
 
     def index
-        @purchases = Group.find(params[:format]).purchases
+        @group = Group.find(params[:format])
+        @purchases = @group.purchases
+        @total_amount =  @group.total_amount
     end
     def new
         @purchase = Purchase.new

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    binding.b
     redirect_to groups_path if signed_in?
   end
 end
