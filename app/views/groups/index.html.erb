@@ -2,7 +2,7 @@
 <% @groups.each do |group| %>
   <div class="container-fluid w-100 border d-flex align-items-center" style="width: 18rem;">
     <% if group.icon.size.zero? %>
-      <%= image_tag "img_placeholder.png",  style: 'height:5em;' %>
+      <%= image_tag "img_placeholder.jpg",  style: 'height:5em;' %>
     <% else %>
       <%= image_tag group.icon,  style: 'height:5em;' %>
     <% end %>
@@ -10,4 +10,4 @@
     <p class="display-6"><%= group.total_amount%></p>
   </div>
 <% end %>
-<%= link_to 'New group', new_group_path, class: 'btn btn-primary btn-lg btn-block fixed-bottom'%>
+<%= link_to 'New group', new_group_path, class: 'btn btn-success btn-lg btn-block fixed-bottom'%>
