@@ -4,15 +4,15 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 require 'webdrivers/chromedriver'
 # Add additional requires below this line. Rails is not loaded until this point!
 # note: require 'devise' after require 'rspec/rails'
-require "devise"
+require 'devise'
 
-require_relative "support/chrome"
-require_relative "support/factory_bot"
+require_relative 'support/chrome'
+require_relative 'support/factory_bot'
 
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
