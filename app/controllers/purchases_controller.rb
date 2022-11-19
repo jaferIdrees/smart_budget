@@ -12,6 +12,8 @@ class PurchasesController < ApplicationController
         groups = [Group.find(params[:purchase][:groups])]
         if purchase.save
             purchase.groups = groups
+            groups[0].total_amount += purchase.amount
+            groups[0].save!
         end
         
     end

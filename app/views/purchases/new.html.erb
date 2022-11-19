@@ -24,7 +24,7 @@
               <%= f.text_field :name, autofocus: true, placeholder: 'Purchase name', hide_label: true %>
             </div>
             <div class="field border-bottom p-0 m-0">
-              <%= f.text_field :amount, hide_label: true, placeholder: 'Amount' %>
+              <%= f.text_field :amount, required: true, hide_label: true, placeholder: 'Amount' %>
             </div>
             <div class="field border-bottom p-0 m-0">
               <%= f.select :groups, @groups.collect { |rec| [rec.name, rec.id]} ,hide_label: true %>
