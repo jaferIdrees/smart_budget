@@ -1,0 +1,11 @@
+<%= render 'shared/navbar', title: 'PURCHASE'%>
+<%unless @purchases.nil? %>
+
+<% @purchases.each do |purchase| %>
+  <div class="container-fluid w-100 border d-flex align-items-center" style="width: 18rem;">
+    <p class= "display-1 text-decoration-none text-center flex-grow-1"><%= purchase.name%> </p>
+    <p class="display-6"><%= purchase.amount%></p>
+  </div>
+<% end %>
+<% end %>
+<%= link_to 'New group', new_purchase_path, class: 'btn btn-primary btn-lg btn-block fixed-bottom'%>

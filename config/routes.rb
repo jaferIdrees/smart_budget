@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "home/index"  
   root to: "home#index"
 
-    resources :groups
+  resources :groups
+  resources :purchases
   # Defines the root path route ("/")
   # root "articles#index"
 end
