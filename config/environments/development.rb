@@ -11,6 +11,8 @@ Rails.application.configure do
   # Devise related config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.factory_bot.definition_file_paths = ["spec/factories"]
+
   # Do not eager load code on boot.
   config.eager_load = false
 

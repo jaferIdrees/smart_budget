@@ -14,9 +14,12 @@
   </head>
   <body>
     <%if notice %>
-      <p class="alert alert-success mt-4" role="alert"><%= notice %></p>
+      <p class="alert alert-success mt-4" role="notice"><%= notice %></p>
     <%end%>
     <%if alert %>
+      <p class="alert alert-danger mt-4" role="alert"><%=alert %></p>
+    <%end%>
+    <%if flash[:alert] %>
       <p class="alert alert-danger mt-4" role="alert"><%=alert %></p>
     <%end%>
     <%= yield %>
