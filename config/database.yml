@@ -82,6 +82,5 @@ test:
 #
 production:
   <<: *default
-  database: smart_budget_production
-  username: smart_budget
-  password: <%= ENV["SMART_BUDGET_DATABASE_PASSWORD"] %>
+   url: <%= ENV['DATABASE_URL'] %>
+  
