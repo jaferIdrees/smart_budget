@@ -19,5 +19,6 @@ class PurchasesController < ApplicationController
     purchase.groups = groups
     groups[0].total_amount += purchase.amount
     groups[0].save!
+    redirect_to groups_path
   end
 end
