@@ -12,28 +12,24 @@ describe "User signs in", type: :system do
     click_button "Log in"
 
     expect(page).to have_text "Signed in successfully"
-    
     expect(page).to have_button "Log out"
-    expect(page).to have_current_path groups_path
   end
 
   scenario "invalid with unregistered account" do
     fill_in "user_email", with: Faker::Internet.email
     fill_in "user_password", with: "FakePassword123"
-    click_button "sign in"
+    click_button "Log in"
 
-    expect(page).to have_no_text "Welcome back"
-    expect(page).to have_text "Invalid Email or password."
-    expect(page).to have_no_link "Sign Out"
+    expect(page).to have_no_text "Signed in successfully"
+    expect(page).to have_no_link "Log Out"
   end
 
   scenario "invalid with invalid password" do
     fill_in "user_email", with: @user.email
     fill_in "user_password", with: "FakePassword123"
-    click_button "sign in"
+    click_button "Log in"
 
-    expect(page).to have_no_text "Welcome back"
-    expect(page).to have_text "Invalid Email or password."
-    expect(page).to have_no_link "Sign Out"
+    expect(page).to have_no_text "Signed in successfully"
+    expect(page).to have_no_link "Log Out"
   end
 end
