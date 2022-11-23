@@ -14,7 +14,7 @@ gem 'sprockets-rails'
 # Setup devise gem for authentication
 gem 'devise'
 
-# Add rubocop linter
+# Add rubocop linterF
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use postgresql as the database for Active Record
