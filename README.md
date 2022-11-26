@@ -10,7 +10,7 @@
 
 ## Demo Video
 
-![Demo](https://www.loom.com/share/137077cc834b42c284bdcebcb6a98caa)
+[Demo](https://www.loom.com/share/137077cc834b42c284bdcebcb6a98caa)
 
 
 ## Built With
@@ -20,7 +20,7 @@
 
 ## Live Demo 
 
-[comming soon]()
+[Live demo](https://jafer-smart-budget.onrender.com/)
 
 
 ## Getting Started
