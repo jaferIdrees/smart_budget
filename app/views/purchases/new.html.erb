@@ -1,0 +1,37 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-start h-100">
+      <div class="col-lg-12 col-xl-11">
+        <%= bootstrap_form_for(@purchase,
+                    url: purchases_path,
+                   :layout => :vertical,
+                   ) do |f| %>
+          <div class="row justify-content-center">
+            <div class="row bg-info-custom mb-5 gx-5 mx-0">
+              <div class="col-3 d-flex justify-content-start align-items-center">
+                <%= link_to 'home', root_path, class: 'text-light link'%>
+              </div>
+              <div class="col-6 d-flex justify-content-center align-items-center">
+                <p class="display-3 text-light">ADD GROUP</p>
+              </div>
+              <div class="col-3 d-flex justify-content-end align-items-center">
+                <%= f.submit 'Add', class: 'bg-info-custom text-light border-0' %>
+              </div>
+            </div>
+          </div>
+          <div class="mx-0 my-0 mx-md-4">
+            <div class="field border-bottom p-0 m-0">
+              <%= f.text_field :name, autofocus: true, placeholder: 'Purchase name', hide_label: true %>
+            </div>
+            <div class="field border-bottom p-0 m-0">
+              <%= f.text_field :amount, required: true, hide_label: true, placeholder: 'Amount' %>
+            </div>
+            <div class="field border-bottom p-0 m-0">
+              <%= f.select :groups, @groups.collect { |rec| [rec.name, rec.id]} ,hide_label: true %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

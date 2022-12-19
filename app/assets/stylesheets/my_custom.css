@@ -1,0 +1,28 @@
+.form-control {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: left;
+  border-bottom: 1px solid black;
+  border: 0;
+  margin: 0;
+}
+
+.btn {
+  width: 100% !important;
+}
+
+.bg-info-custom {
+  background-color: rgb(77, 77, 240);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.home-container {
+  height: 100vh;
+}
+
+.main-title {
+  font-family: 'Pacifico', cursive;
+}

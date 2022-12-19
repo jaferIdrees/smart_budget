@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+google-chrome-stable_current_amd64.deb
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

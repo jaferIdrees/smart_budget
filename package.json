@@ -6,6 +6,7 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
     "@hotwired/stimulus": "^3.1.1",
     "@hotwired/turbo-rails": "^7.2.4",
     "@popperjs/core": "^2.11.6",
@@ -13,5 +14,11 @@
     "bootstrap-icons": "^1.10.2",
     "esbuild": "^0.15.13",
     "sass": "^1.56.1"
+  },
+  "devDependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
   }
 }

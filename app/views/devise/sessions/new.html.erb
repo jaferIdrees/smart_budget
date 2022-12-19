@@ -1,0 +1,41 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-start h-100">
+      <div class="col-lg-12 col-xl-11">
+        <%= bootstrap_form_for(resource, as: resource_name,
+                    url:session_path(resource_name),
+                   :layout => :vertical,
+                   ) do |f| %>
+          <div class="row justify-content-center">
+            
+             
+                <div class="row bg-info-custom mb-5 gx-5 mx-0">
+
+                  <div class="col-3 d-flex justify-content-start align-items-center">
+                    <%= link_to 'home', root_path, class: 'text-light link'%>
+                  </div>
+                  <div class="col-6 d-flex justify-content-center align-items-center">
+                    <p class="display-3 text-light">LOGIN</p>
+                  </div>
+                  <div class="col-3 d-flex justify-content-end align-items-center">
+                    <%= f.submit 'Log in', class: 'bg-info-custom text-light border-0' %>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-0 my-0 mx-md-4">
+                <%= render "devise/shared/error_messages", resource: resource %>
+                
+                <div class="field border-bottom p-0 m-0">
+                  <%= f.email_field :email, hide_label: true, placeholder: 'Your email', autocomplete: "email" %>
+                </div>
+                <div class="field border-bottom p-0 m-0">
+                  <%= f.password_field :password, hide_label: true, placeholder: 'Password', autocomplete: "new-password" %>
+                </div>
+              <% end %>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%= render "devise/shared/links" %>
